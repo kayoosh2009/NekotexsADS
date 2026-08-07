@@ -107,22 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  /* ---------- 6. Форма (демо-обработчик) ---------- */
-  const form = document.getElementById('leadForm');
-  const success = document.getElementById('formSuccess');
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // TODO: здесь подключим отправку на бэкенд / WhatsApp
-    success.hidden = false;
-    form.querySelector('button[type="submit"]').textContent = '✓ נשלח בהצלחה';
-    setTimeout(() => {
-      form.reset();
-      form.querySelector('button[type="submit"]').textContent = 'שליחת פרטים';
-    }, 3000);
-  });
-
-
   /* ---------- 7. Текущий год в футере ---------- */
   document.getElementById('year').textContent = new Date().getFullYear();
 });
