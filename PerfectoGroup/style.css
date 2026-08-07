@@ -594,31 +594,68 @@ ul { list-style: none; }
 /* =========================================================
    АДАПТИВ
    ========================================================= */
+/* =========================================================
+   АДАПТИВ (улучшенный)
+   ========================================================= */
 @media (max-width: 992px) {
-  .hero__grid { grid-template-columns: 1fr; gap: 44px; }
+  .hero { padding-top: calc(var(--nav-h) + 36px); }
+  .hero__grid { grid-template-columns: 1fr; gap: 40px; padding-bottom: 56px; }
   .hero__media { order: -1; }
-  .img-placeholder--hero { min-height: 320px; }
+  .img-placeholder--hero { min-height: 300px; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .service-card--featured { grid-template-columns: 1fr; }
   .service-card--featured .img-placeholder { min-height: 220px; }
   .why-grid, .contact-grid { grid-template-columns: 1fr; gap: 44px; }
-  .img-placeholder--tall { min-height: 340px; }
+  .img-placeholder--tall { min-height: 320px; }
   .gallery { grid-template-columns: repeat(2, 1fr); }
   .gallery__item--wide { grid-column: span 2; }
 }
 
 @media (max-width: 768px) {
+  :root { --nav-h: 64px; }
+  .navbar__inner { gap: 14px; }
+  .navbar__logo-img { height: 38px; }
+  .navbar__name { font-size: 17px; }
   .navbar__menu, .navbar__cta { display: none; }
   .navbar__burger { display: flex; }
-  .section { padding: 64px 0; }
-  .hero__stats { gap: 24px; flex-wrap: wrap; }
-  .form-row { grid-template-columns: 1fr; }
-  .float-card--1 { top: -16px; right: 8px; }
-  .float-card--2 { bottom: -16px; left: 8px; }
+
+  .section { padding: 60px 0; }
+  .section-head { margin-bottom: 40px; }
+
+  .hero__subtitle { font-size: 16px; }
+  .hero__stats { gap: 20px; }
+  .stat__num { font-size: 24px; }
+
+  /* компактные плавающие карточки */
+  .float-card { padding: 10px 14px; gap: 8px; border-radius: 12px; }
+  .float-card__icon { width: 34px; height: 34px; font-size: 15px; }
+  .float-card b { font-size: 13px; }
+  .float-card small { font-size: 11px; }
+  .float-card--1 { top: -14px; right: 6px; }
+  .float-card--2 { bottom: -14px; left: 6px; }
+
+  .ticker__track { font-size: 13px; gap: 24px; }
+
+  .contact-cta__card { padding: 28px 22px; }
+  .contact-phone { font-size: 21px; }
+
+  .footer__inner { justify-content: center; text-align: center; }
+  .whatsapp-float { width: 54px; height: 54px; bottom: 18px; left: 18px; }
 }
 
 @media (max-width: 560px) {
+  .container { width: 90%; }
   .services-grid, .gallery { grid-template-columns: 1fr; }
   .gallery__item--wide { grid-column: span 1; }
+  .hero__actions { flex-direction: column; }
   .hero__actions .btn { width: 100%; }
+  .hero__stats { justify-content: space-between; }
+  .service-card { padding: 26px 22px; }
+}
+
+/* Логотип-картинка */
+.navbar__logo-img {
+  height: 46px;
+  width: auto;
+  display: block;
 }
