@@ -336,6 +336,19 @@ ul { list-style: none; }
 .img-placeholder--hero { min-height: 460px; border-radius: 32px; box-shadow: var(--shadow-lg); }
 .img-placeholder--tall { min-height: 520px; }
 
+/* Когда внутрь заглушки добавлен <img> — она становится фоторамкой */
+.img-placeholder:has(img) { border-color: transparent; background: none; }
+.img-placeholder:has(img) > svg,
+.img-placeholder:has(img) > span { display: none; }
+.img-placeholder img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
 /* =========================================================
    БЕГУЩАЯ СТРОКА
    ========================================================= */
